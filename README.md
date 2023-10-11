@@ -7,7 +7,7 @@ Mapping data from object or associative array to object implements \Alexboo\Anno
 You can install it using the composer. But it need phalcon framework php extension.
  
 ```
-composer require alexboo/phalcon-annotation-mapper
+composer require alexboo/phalcon5-annotation-mapper
 ```
 
 ### Examples
