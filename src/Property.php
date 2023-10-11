@@ -3,7 +3,7 @@
 namespace Alexboo\AnnotationMapper;
 
 use Alexboo\AnnotationMapper\Cast\CastInterface;
-
+use Phalcon\Support\HelperFactory;
 /**
  * Class with annotation parameters
  * Class Property
@@ -34,8 +34,12 @@ class Property
      */
     protected $_isArray = false;
 
+    /** @var HelperFactory */
+    protected $helper;
+
     public function __construct($property, \Phalcon\Annotations\Annotation $annotation)
     {
+        $this->helper = new HelperFactory();
         $this->_property = $property;
 
         $params = $annotation->getArguments();
@@ -84,7 +88,7 @@ class Property
         }
 
         if (is_object($recipient)) {
-            $setMethod = 'set' . \Phalcon\Text::camelize($this->_property);
+            $setMethod = 'set' . $this->helper->camelize($this->_property);
             if (method_exists($recipient, $setMethod)) {
                 $recipient->{$setMethod}($value);
             } else if (property_exists($recipient, $this->_property)) {
@@ -109,7 +113,7 @@ class Property
         $value = null;
 
         if (is_object($dontator)) {
-            $getMethod = 'get' . \Phalcon\Text::camelize($this->_mappingProperty);
+            $getMethod = 'get' . $this->helper->camelize($this->_mappingProperty);
             if (method_exists($dontator, $getMethod)) {
                 $value = $dontator->{$getMethod}();
             } else if (isset($dontator, $this->_mappingProperty)){

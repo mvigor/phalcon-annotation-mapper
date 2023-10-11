@@ -1,9 +1,9 @@
 {
-  "name": "alexboo/phalcon-annotation-mapper",
+  "name": "alexboo/phalcon5-annotation-mapper",
   "type": "library",
   "description": "Mapping data by annotation",
   "keywords": ["phalcon", "annotation", "mapper"],
-  "homepage": "https://github.com/alexboo/phalcon-annotation-mapper",
+  "homepage": "https://github.com/mvigor/phalcon-annotation-mapper",
   "license": "LGPL-3.0",
   "authors": [
     {
@@ -11,8 +11,8 @@
     }
   ],
   "require": {
-    "php": ">=5.4.0",
-    "ext-phalcon": ">=1.2.4"
+    "php": ">=8.0",
+    "ext-phalcon": ">=5.0.0"
   },
   "autoload": {
     "psr-4": {

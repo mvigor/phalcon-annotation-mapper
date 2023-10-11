@@ -2,7 +2,7 @@
 
 namespace Alexboo\AnnotationMapper;
 
-use Phalcon\DI;
+use Phalcon\DI\Di as DI;
 use Phalcon\Annotations\Adapter\Memory as MemoryAdapter;
 
 /**
